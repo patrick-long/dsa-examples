@@ -1,0 +1,23 @@
+{
+  "name": "dsa-examples",
+  "version": "1.0.0",
+  "description": "Code examples of different data structures and algorithms",
+  "main": "index.ts",
+  "scripts": {
+    "start": "tsx ./src/ts/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/patrick-long/dsa-examples.git"
+  },
+  "author": "Patrick Long",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patrick-long/dsa-examples/issues"
+  },
+  "homepage": "https://github.com/patrick-long/dsa-examples#readme",
+  "devDependencies": {
+    "tsx": "^4.21.0"
+  }
+}
