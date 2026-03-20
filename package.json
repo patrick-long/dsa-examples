@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/patrick-long/dsa-examples#readme",
   "devDependencies": {
+    "prettier": "^3.8.1",
     "tsx": "^4.21.0"
   }
 }
