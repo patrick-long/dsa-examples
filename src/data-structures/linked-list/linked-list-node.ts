@@ -1,8 +1,8 @@
 export default class LinkedListNode {
 	public data: number;
-	public next!: LinkedListNode | null;
-	public prev!: LinkedListNode | null;
-	public last!: LinkedListNode | null;
+	public next?: LinkedListNode | null;
+	public prev?: LinkedListNode | null;
+	public last?: LinkedListNode | null;
 
 	constructor(
 		data: number,
@@ -11,16 +11,11 @@ export default class LinkedListNode {
 	) {
 		this.data = data;
 
-		if (nextNode) {
-			this.setNext(nextNode);
-		}
-
-		if (prevNode) {
-			this.setPrevious(prevNode);
-		}
+		this.setNext(nextNode ?? null);
+		this.setPrevious(prevNode ?? null);
 	}
 
-	public setNext(node: LinkedListNode): void {
+	public setNext(node: LinkedListNode | null): void {
 		this.next = node;
 
 		if (this === this.last) {
@@ -28,15 +23,15 @@ export default class LinkedListNode {
 		}
 
 		if (node && node.prev !== this) {
-			this.next.setPrevious(this);
+			this.next?.setPrevious(this);
 		}
 	}
 
-	public setPrevious(node: LinkedListNode): void {
+	public setPrevious(node: LinkedListNode | null): void {
 		this.prev = node;
 
-		if (node && this.prev.next !== this) {
-			this.prev.setNext(this);
+		if (node && this.prev?.next !== this) {
+			this.prev?.setNext(this);
 		}
 	}
 
