@@ -1,6 +1,5 @@
 export default class ArrayList<T> {
-	public list: T[];
-	// private list: T[];
+	private list: T[];
 	private length: number;
 
 	constructor() {
