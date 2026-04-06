@@ -1,17 +1,28 @@
 export default class LinkedListNode {
-	public next: LinkedListNode;
-	public prev: LinkedListNode;
-	public last: LinkedListNode;
+	public data: number;
+	public next!: LinkedListNode | null;
+	public prev!: LinkedListNode | null;
+	public last!: LinkedListNode | null;
 
-	constructor(data: number, nextNode: LinkedListNode, prevNode: LinkedListNode) {
+	constructor(
+		data: number,
+		nextNode?: LinkedListNode | null,
+		prevNode?: LinkedListNode | null,
+	) {
 		this.data = data;
-		this.setNext(nextNode);
-		this.setPrevious(prevNode);
+
+		if (nextNode) {
+			this.setNext(nextNode);
+		}
+
+		if (prevNode) {
+			this.setPrevious(prevNode);
+		}
 	}
 
 	public setNext(node: LinkedListNode): void {
 		this.next = node;
-		
+
 		if (this === this.last) {
 			this.last = node;
 		}
@@ -23,7 +34,7 @@ export default class LinkedListNode {
 
 	public setPrevious(node: LinkedListNode): void {
 		this.prev = node;
-		
+
 		if (node && this.prev.next !== this) {
 			this.prev.setNext(this);
 		}
@@ -41,4 +52,3 @@ export default class LinkedListNode {
 		return clonedHead;
 	}
 }
-
